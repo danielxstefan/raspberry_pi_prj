@@ -1,0 +1,1521 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Input / Outputs commands</title>
+<style>
+
+.inputsOff{
+	border-style: solid;
+	border-color: Silver;
+    background-color: TEAL;
+    color: white;
+    padding: 1px;
+	font-weight:bold;
+	vertical-align: middle;
+}
+.inputsOn{
+	border-style: solid;
+	border-color: Silver;
+    background-color: Red;
+    color: white;
+    padding: 1px;
+	font-weight:bold
+}
+.inputsNA{
+	border-style: solid;
+	border-color: Silver;
+    background-color: Orange;
+    color: white;
+    padding: 1px;
+	font-weight:bold
+}
+.noteColors{
+	border-style: solid;
+	border-color: Silver;
+    background-color: Gray;
+    color: White;
+    padding: 1px;
+	font-weight:bold
+}
+.inputsContainer{
+	border-style: solid;
+	border-color: Gray;
+	background-color: Gray;
+	height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.outputsContainer{
+	border-style: solid;
+	border-color: Gray;
+	background-color: #A9A9A9;
+	height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.setInvisible{
+	display: none;
+}
+.setVisible{
+	display: block;
+}
+
+</style>
+</head>
+
+<body>
+</body>
+<br/><br/><br/>
+
+
+<div class="inputsOff"> Inputs monitoring and Outputs command page</div>
+
+<div>
+
+<br/><br/><br/>
+
+<div class="noteColors">Inputs State</div>
+<div class="inputsContainer">
+	<span class="inputsNA">&nbsp; 1 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsNA">&nbsp; 2 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsNA">&nbsp; 3 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsOff">&nbsp; 4 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsNA">&nbsp; 5 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsOn">&nbsp; 6 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsNA">&nbsp; 7 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsNA">&nbsp; 8 ON &nbsp;</span>
+</div><br/>
+
+<div class="noteColors">Outputs State</div>
+<div class="outputsContainer">
+	<span class="inputsNA">&nbsp; 1 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsNA">&nbsp; 2 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsNA">&nbsp; 3 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsNA">&nbsp; 4 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsNA">&nbsp; 5 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsNA">&nbsp; 6 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsNA">&nbsp; 7 ON &nbsp;</span>&nbsp;&nbsp;
+	<span class="inputsNA">&nbsp; 8 ON &nbsp;</span>
+</div>
+
+
+<div class="noteColors">Buttons for command the outputs</div>
+<div class="outputsContainer">
+
+	<button type="button">1 ON</button> 
+	<button type="button">1 OFF</button> 
+	&nbsp; | &nbsp;
+	<button type="button">2 ON</button> 
+	<button type="button">2 OFF</button> 
+	&nbsp; | &nbsp;
+	<button type="button">3 ON</button> 
+	<button type="button">3 OFF</button> 
+	&nbsp; | &nbsp;
+	<button type="button">4 ON</button> 
+	<button type="button">4 OFF</button> 
+</div>
+<div class="outputsContainer">
+	<button type="button">5 ON</button> 
+	<button type="button">5 OFF</button> 
+	&nbsp; | &nbsp;
+	<button type="button">6 ON</button> 
+	<button type="button">6 OFF</button> 
+	&nbsp; | &nbsp;
+	<button type="button">7 ON</button> 
+	<button type="button">7 OFF</button> 
+	&nbsp; | &nbsp;
+	<button type="button">8 ON</button> 
+	<button type="button">8 OFF</button> 
+</div>
+<div>
+
+<div  class="noteColors">
+	Output 7 and 8 are timered!
+<!-- <form action=""> -->
+	<input type="radio" id ="enableTimersYes" onclick="enableTimers()" name="out78timered" value="timered78Yes" > Yes |
+	<input type="radio" id ="enableTimersNo" onclick="disableTimers()" name="out78timered" value="timered78No"> No
+<!-- </form> -->
+
+</div>
+	<div id="allDaysContainer">
+		<!-- DAYS OF WEEK START -->
+		<div class="noteColors"><b>Monday</b></div>
+		<div class="outputsContainer">
+		Output 7 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+
+		<!-- one row for start and stop relay - it START HERE -->
+
+		<div class="outputsContainer">
+		Output 8 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+		<!-- DAYS OF WEEK START -->
+
+
+
+		<!-- DAYS OF WEEK START -->
+		<div  class="noteColors"><b>Tuesday</b></div>
+		<div class="outputsContainer">
+		Output 7 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+
+		<!-- one row for start and stop relay - it START HERE -->
+
+		<div class="outputsContainer">
+		Output 8 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+		<!-- DAYS OF WEEK START -->
+
+
+
+		<!-- DAYS OF WEEK START -->
+		<div class="noteColors"><b>Wednesday</b></div>
+		<div class="outputsContainer">
+		Output 7 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+
+		<!-- one row for start and stop relay - it START HERE -->
+
+		<div class="outputsContainer">
+		Output 8 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+		<!-- DAYS OF WEEK START -->
+
+
+		<!-- DAYS OF WEEK START -->
+		<div class="noteColors"><b>Thursday</b></div>
+		<div class="outputsContainer">
+		Output 7 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+
+		<!-- one row for start and stop relay - it START HERE -->
+
+		<div class="outputsContainer">
+		Output 8 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+		<!-- DAYS OF WEEK START -->
+
+
+
+		<!-- DAYS OF WEEK START -->
+		<div class="noteColors"><b>Friday</b></div>
+		<div class="outputsContainer">
+		Output 7 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+
+		<!-- one row for start and stop relay - it START HERE -->
+
+		<div class="outputsContainer">
+		Output 8 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+		<!-- DAYS OF WEEK START -->
+
+
+		<!-- DAYS OF WEEK START -->
+		<div class="noteColors"><b>Saturday</b></div>
+		<div class="outputsContainer">
+		Output 7 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+
+		<!-- one row for start and stop relay - it START HERE -->
+
+		<div class="outputsContainer">
+		Output 8 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+		<!-- DAYS OF WEEK START -->
+
+
+
+
+
+		<!-- DAYS OF WEEK START -->
+		<div class="noteColors"><b>Sunday</b></div>
+		<div class="outputsContainer">
+		Output 7 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+
+		<!-- one row for start and stop relay - it START HERE -->
+
+		<div class="outputsContainer">
+		Output 8 START: H:&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select>
+			  <option value="st1h00">00</option>
+			  <option value="st1h01">01</option>
+			  <option value="st1h02">02</option>
+			  <option value="st1h03">03</option>
+			  <option value="st1h04">04</option>
+			  <option value="st1h05">05</option>
+			  <option value="st1h06">06</option>
+			  <option value="st1h07">07</option>
+			  <option value="st1h08">08</option>
+			  <option value="st1h09">09</option>
+			  <option value="st1h10">10</option>
+			  <option value="st1h11">11</option>
+			  <option value="st1h12">12</option>
+			  <option value="st1h13">13</option>
+			  <option value="st1h14">14</option>
+			  <option value="st1h15">15</option>
+			  <option value="st1h16">16</option>
+			  <option value="st1h17">17</option>
+			  <option value="st1h18">18</option>
+			  <option value="st1h19">19</option>
+			  <option value="st1h20">20</option>
+			  <option value="st1h21">21</option>
+			  <option value="st1h22">22</option>
+			  <option value="st1h23">23</option>
+			</select>
+			Min:&nbsp;
+			<select>
+			  <option value="st1m00">:00</option>
+			  <option value="st1m05">:05</option>
+			  <option value="st1m10">:10</option>
+			  <option value="st1m15">:15</option>
+			  <option value="st1m20">:20</option>
+			  <option value="st1m25">:25</option>
+			  <option value="st1m30">:30</option>
+			  <option value="st1m35">:35</option>
+			  <option value="st1m40">:40</option>
+			  <option value="st1m45">:45</option>
+			  <option value="st1m50">:50</option>
+			  <option value="st1m55">:55</option>
+			</select>
+			
+			&nbsp;|&nbsp;
+			<button type="button">SET</button> 
+			
+			
+		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+		<!-- DAYS OF WEEK START -->
+	</div>
+
+
+<script>
+
+	function disableTimers() {
+		document.getElementById("allDaysContainer").className = "setInvisible";	
+	}
+	function enableTimers() {
+		document.getElementById("allDaysContainer").className = "setVisible";	
+	}
+
+
+
+</script>
+
+
+
+<br/><br/><br/>
+
+<div class="noteColors"> Note for colors: 
+	<span class="inputsOff">&nbsp; &nbsp; </span>&nbsp; = inputs are OFF state &nbsp; | &nbsp; 
+	<span class="inputsOn">&nbsp; &nbsp; </span>&nbsp; = inputs are ON state
+	<span class="inputsNA">&nbsp; &nbsp; </span>&nbsp; = inputs are NOT readed
+
+
+<div>
+
+
+</html> 
