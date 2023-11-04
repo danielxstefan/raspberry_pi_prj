@@ -1,59 +1,167 @@
  <!DOCTYPE html>
+
+
 <html>
 <head>
 <title>Input / Outputs commands</title>
+<!-- ========================================================================
+							   Written by Daniel Stefan
+
+	 ========================================================================
+-->
+
 <style>
 
-.inputsOff{
+.menuClass1{
+	font-family: 'Helvetica Neue', sans-serif; 
+	color: #ECEFF1; 
+	background-color: #263238;
+	font-size: 27px; 
+	font-weight: bold; 
+	letter-spacing: -1px; 
+	line-height: 1; 
+	text-align: center;
+}
+
+.menuClass2{
+	font-family: 'Helvetica Neue', sans-serif; 
+	color: #CFD8DC ; 
+	background-color: #37474F;
+	font-size: 27px; 
+	font-weight: bold; 
+	letter-spacing: -1px; 
+	line-height: 1; 
+	text-align: center;
+}
+
+.inOutOff{
+	font-family: 'Helvetica Neue', sans-serif; 
 	border-style: solid;
 	border-color: Silver;
-    background-color: TEAL;
+    background-color: #008F68;
     color: white;
     padding: 1px;
 	font-weight:bold;
 	vertical-align: middle;
 }
-.inputsOn{
+.inOutOn{
+	font-family: 'Helvetica Neue', sans-serif; 
 	border-style: solid;
 	border-color: Silver;
-    background-color: Red;
+    background-color: #D11250;
     color: white;
     padding: 1px;
 	font-weight:bold
 }
-.inputsNA{
+.inOutNa{
+	font-family: 'Helvetica Neue', sans-serif; 
 	border-style: solid;
 	border-color: Silver;
-    background-color: Orange;
+    background-color: #DB5800;
     color: white;
     padding: 1px;
 	font-weight:bold
 }
-.noteColors{
+
+
+.inputsContainerHeader{
+	font-family: 'Helvetica Neue', sans-serif; 
 	border-style: solid;
-	border-color: Silver;
-    background-color: Gray;
+	border-color: #BCAAA4;
+    background-color: #8D6E63;
+    color: White;
+    padding: 1px;
+	font-weight: bold;
+	align-items: center;
+    justify-content: center
+}
+
+
+.inputsContainer{
+	font-family: 'Helvetica Neue', sans-serif; 
+	border-style: solid;
+	border-color: #795548;
+	background-color: #5D4037;
+	height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.outputsContainerHeader{
+	font-family: 'Helvetica Neue', sans-serif; 
+	border-style: solid;
+	border-color: #CFD8DC;
+    background-color: #90A4AE;
     color: White;
     padding: 1px;
 	font-weight:bold
 }
-.inputsContainer{
+
+.outputsContainer{
+	font-family: 'Helvetica Neue', sans-serif; 
 	border-style: solid;
-	border-color: Gray;
-	background-color: Gray;
+	border-color: #607D8B;
+	background-color: #455A64;
 	height: 35px;
     display: flex;
     align-items: center;
     justify-content: center
 }
-.outputsContainer{
+
+.buttonsContainerHeader{
+	font-family: 'Helvetica Neue', sans-serif; 
 	border-style: solid;
-	border-color: Gray;
-	background-color: #A9A9A9;
+	border-color: #BDBDBD;
+	background-color: #757575;
+	height: 35px;
+    display: flex;
+	color: White;
+    font-weight:bold
+}
+
+.buttonsContainer{
+	font-family: 'Helvetica Neue', sans-serif; 
+	border-style: solid;
+	border-color: #616161;
+	background-color: #424242;
 	height: 35px;
     display: flex;
     align-items: center;
     justify-content: center
+}
+
+.oldTimerColor{
+	font-family: 'Helvetica Neue', sans-serif; 
+	border-style: solid;
+	border-color: #FFCCBC;
+    background-color: #FF8A65;
+    color: White;
+    padding: 1px;
+	font-weight: bold;
+	align-items: center;
+    justify-content: center
+}
+
+.daysTimerColors{
+	font-family: 'Helvetica Neue', sans-serif; 
+	border-style: solid;
+	border-color: #BCAAA4;
+    background-color: #8D6E63;
+	height: 35px;
+    color: White;
+    padding: 1px;
+	font-weight:bold
+}
+
+.clasForPre{
+	font-family: 'Helvetica Neue', sans-serif; 
+	border-style: solid;
+	border-color: #00BCD4;
+    background-color: #00838F;
+    color: White;
+    padding: 1px;
+	font-weight:bold
 }
 
 .setInvisible{
@@ -64,1458 +172,1047 @@
 }
 
 </style>
+<script>
+function createHoursForSelect(){
+	for(var initValue = 0; initValue < 24 ;initValue++){
+		document.write('<option value="'+(("0" + initValue).slice(-2)) +'">' +(("0" + initValue).slice(-2)) +'</option>');}
+}
+function createMinutesForSelect(){
+	for(var initValue = 0; initValue < 60 ;initValue+=5){
+		document.write('<option value="'+(("0" + initValue).slice(-2)) +'">:'+
+	(("0" + initValue).slice(-2)) +'</option>');}
+}
+
+
+</script>
 </head>
 
 <body>
-</body>
+
 <br/><br/><br/>
-
-
-<div class="inputsOff"> Inputs monitoring and Outputs command page</div>
-
+</div>
+<div id="debuggingDiv">
+	debuggingDiv vars here!!!
+</div>
+	<div class='menuClass2'>================================================</div>
+	<div class='menuClass1'>== Inputs monitoring and Outputs command page ==</div>
+	<div class='menuClass2'>================================================</div>
 <div>
 
+
+<br/><br/><br/>
 <br/><br/><br/>
 
-<div class="noteColors">Inputs State</div>
+<div class="inputsContainerHeader">Inputs State</div>
 <div class="inputsContainer">
-	<span class="inputsNA">&nbsp; 1 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsNA">&nbsp; 2 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsNA">&nbsp; 3 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsOff">&nbsp; 4 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsNA">&nbsp; 5 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsOn">&nbsp; 6 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsNA">&nbsp; 7 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsNA">&nbsp; 8 ON &nbsp;</span>
+	<span id="in01Label" class="inOutNa">&nbsp; 1 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id="in02Label" class="inOutNa">&nbsp; 2 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id="in03Label" class="inOutNa">&nbsp; 3 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id="in04Label" class="inOutNa">&nbsp; 4 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id="in05Label" class="inOutNa">&nbsp; 5 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id="in06Label" class="inOutNa">&nbsp; 6 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id="in07Label" class="inOutNa">&nbsp; 7 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id="in08Label" class="inOutNa">&nbsp; 8 ?? &nbsp;</span>
 </div><br/>
 
-<div class="noteColors">Outputs State</div>
+<div class="outputsContainerHeader">Outputs State</div>
 <div class="outputsContainer">
-	<span class="inputsNA">&nbsp; 1 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsNA">&nbsp; 2 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsNA">&nbsp; 3 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsNA">&nbsp; 4 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsNA">&nbsp; 5 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsNA">&nbsp; 6 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsNA">&nbsp; 7 ON &nbsp;</span>&nbsp;&nbsp;
-	<span class="inputsNA">&nbsp; 8 ON &nbsp;</span>
+	<span id = "out01Label" class="inOutNa">&nbsp; 1 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id = "out02Label" class="inOutNa">&nbsp; 2 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id = "out03Label" class="inOutNa">&nbsp; 3 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id = "out04Label" class="inOutNa">&nbsp; 4 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id = "out05Label" class="inOutNa">&nbsp; 5 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id = "out06Label" class="inOutNa">&nbsp; 6 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id = "out07Label" class="inOutNa">&nbsp; 7 ?? &nbsp;</span>&nbsp;&nbsp;
+	<span id = "out08Label" class="inOutNa">&nbsp; 8 ?? &nbsp;</span>
 </div>
+<br/>
 
+<div class="buttonsContainerHeader">Buttons for command the outputs</div>
+<div class="buttonsContainer">
 
-<div class="noteColors">Buttons for command the outputs</div>
-<div class="outputsContainer">
-
-	<button type="button">1 ON</button> 
-	<button type="button">1 OFF</button> 
+	<button type="button" onclick="setResBit(1, true)">1 ON</button> 
+	<button type="button" onclick="setResBit(1, false)">1 OFF</button> 
 	&nbsp; | &nbsp;
-	<button type="button">2 ON</button> 
-	<button type="button">2 OFF</button> 
+	<button type="button" onclick="setResBit(2, true)">2 ON</button> 
+	<button type="button" onclick="setResBit(2, false)">2 OFF</button> 
 	&nbsp; | &nbsp;
-	<button type="button">3 ON</button> 
-	<button type="button">3 OFF</button> 
+	<button type="button" onclick="setResBit(3, true)">3 ON</button> 
+	<button type="button" onclick="setResBit(3, false)">3 OFF</button> 
 	&nbsp; | &nbsp;
-	<button type="button">4 ON</button> 
-	<button type="button">4 OFF</button> 
+	<button type="button" onclick="setResBit(4, true)">4 ON</button> 
+	<button type="button" onclick="setResBit(4, false)">4 OFF</button> 
 </div>
-<div class="outputsContainer">
-	<button type="button">5 ON</button> 
-	<button type="button">5 OFF</button> 
+<div class="buttonsContainer">
+	<button type="button" onclick="setResBit(5, true)">5 ON</button> 
+	<button type="button" onclick="setResBit(5, false)">5 OFF</button> 
 	&nbsp; | &nbsp;
-	<button type="button">6 ON</button> 
-	<button type="button">6 OFF</button> 
+	<button type="button" onclick="setResBit(6, true)">6 ON</button> 
+	<button type="button" onclick="setResBit(6, false)">6 OFF</button> 
 	&nbsp; | &nbsp;
-	<button type="button">7 ON</button> 
-	<button type="button">7 OFF</button> 
+	<button id="btn7on" type="button" onclick="setResBit(7, true)">7 ON</button> 
+	<button id="btn7off" type="button" onclick="setResBit(7, false)">7 OFF</button> 
 	&nbsp; | &nbsp;
-	<button type="button">8 ON</button> 
-	<button type="button">8 OFF</button> 
+	<button id="btn8on" type="button" onclick="setResBit(8, true)">8 ON</button> 
+	<button id="btn8off" type="button" onclick="setResBit(8, false)">8 OFF</button> 
 </div>
 <div>
 
-<div  class="noteColors">
-	Output 7 and 8 are timered!
-<!-- <form action=""> -->
-	<input type="radio" id ="enableTimersYes" onclick="enableTimers()" name="out78timered" value="timered78Yes" > Yes |
-	<input type="radio" id ="enableTimersNo" onclick="disableTimers()" name="out78timered" value="timered78No"> No
-<!-- </form> -->
+<div  class="daysTimerColors">
+	Output 7 and 8 are timed!
+	<input type="radio" id ="enableTimersNo" onclick="disableTimers()" name="out78timered" value="timered78No"> No |
+	<input type="radio" id ="enableTimersYes" onclick="enableTimers()" name="out78timered" value="timered78Yes" > Yes
 
 </div>
 	<div id="allDaysContainer">
 		<!-- DAYS OF WEEK START -->
-		<div class="noteColors"><b>Monday</b></div>
+		<div class="daysTimerColors"><b>Monday: New Time:</b></div>
 		<div class="outputsContainer">
 		Output 7 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<!-- START TIMER -->
+			<select id="selectStartHo7Mon">
+				<script> 
+					createHoursForSelect();
+				</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStartMi7Mon">
+				<script>createMinutesForSelect();</script>
 			</select>
 			:&nbsp;:&nbsp;|
 			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<!-- STOP TIMER -->
+			<select id ="selectStopHo7Mon">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id ="selectStopMi7Mon">
+				<script>createMinutesForSelect();</script>
 			</select>
 			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
+			<button type="button" onclick="btnSetTimer7Mo()">SET</button>
+			
+			<span id="printTimer1Value">Is not setted!</span>
 			
 		</div>
+		<!-- one row for start and stop relay - it END HERE -->
+
+		<!-- one row for start and stop relay - it START HERE -->
+		<div class="outputsContainer">
+		Output 8 START: H:&nbsp;
+			<!-- START TIMER -->
+			<select id ="selectStartHo8Mon">
+				<script> createHoursForSelect();</script>
+			</select>
+			Min:&nbsp;
+			
+			<select id ="selectStartMi8Mon">
+				<script>createMinutesForSelect();</script>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<!-- STOP TIMER -->
+			
+			<select id ="selectStopHo8Mon">
+				<script> createHoursForSelect();</script>
+			</select>
+			Min:&nbsp;
+			<select  id ="selectStopMi8Mon">
+				<script>createMinutesForSelect();</script>
+			</select>			
+			&nbsp;|&nbsp;
+
+			<button type="button" onclick="btnSetTimer8Mo()">SET</button>
+			<span id="printTimer2Value">Is not setted!</span>
+			
+			
+		</div>
+		
+		<div class="oldTimerColor">Monday: Old Time:
+			<span id="printTImer12ValueFromController">00:00</span>
+		</div>
+		
+		<!-- END OF Monday, END OF RELAY 7 and 8 -->
+
+		<div  class="daysTimerColors"><b>Tuesday</b></div>
+		<div class="outputsContainer">
+		Output 7 START: H:&nbsp;
+			<select id="selectStartHo7Tue">
+				<script> createHoursForSelect();</script>
+			</select>
+			Min:&nbsp;
+			<select id="selectStartMi7Tue">
+				<script>createMinutesForSelect();</script>
+			</select>
+			:&nbsp;:&nbsp;|
+			STOP: H :&nbsp;
+			<select id="selectStopHo7Tue">
+				<script> createHoursForSelect();</script>
+			</select>
+			Min:&nbsp;
+			<select id="selectStopMi7Tue">
+				<script>createMinutesForSelect();</script>
+			</select>
+			&nbsp;|&nbsp;
+			<button type="button" onclick="btnSetTimer7Tu()">SET</button> 
+			<span id="printTimer3Value">Is not setted!</span>
+		</div>
+		
 		<!-- one row for start and stop relay - it END HERE -->
 
 		<!-- one row for start and stop relay - it START HERE -->
 
 		<div class="outputsContainer">
 		Output 8 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStartHo8Tue">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStartMi8Tue">
+				<script>createMinutesForSelect();</script>
 			</select>
 			:&nbsp;:&nbsp;|
 			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStopHo8Tue">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStopMi8Tue">
+				<script>createMinutesForSelect();</script>
 			</select>
 			
 			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
-			
+			<button type="button" onclick="btnSetTimer8Tu()">SET</button> 
+			<span id="printTimer4Value">Is not setted!</span>
 			
 		</div>
+		
+		<div class="oldTimerColor">Tuesday: Old Time:
+			<span id="printTImer34ValueFromController">00:00</span>
+		</div>
+		
 		<!-- one row for start and stop relay - it END HERE -->
 		<!-- DAYS OF WEEK START -->
 
-
-
 		<!-- DAYS OF WEEK START -->
-		<div  class="noteColors"><b>Tuesday</b></div>
+		<div class="daysTimerColors"><b>Wednesday</b></div>
 		<div class="outputsContainer">
 		Output 7 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStartHo7Wed">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStartMi7Wed">
+				<script>createMinutesForSelect();</script>
 			</select>
 			:&nbsp;:&nbsp;|
 			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStopHo7Wed">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStopMi7Wed">
+				<script>createMinutesForSelect();</script>
 			</select>
 			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
-			
+			<button type="button" onclick="btnSetTimer7We()">SET</button> 
+			<span id="printTimer5Value">Is not setted!</span>
 		</div>
+		
+
 		<!-- one row for start and stop relay - it END HERE -->
 
 		<!-- one row for start and stop relay - it START HERE -->
 
 		<div class="outputsContainer">
 		Output 8 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStartHo8Wed">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStartMi8Wed">
+				<script>createMinutesForSelect();</script>
 			</select>
 			:&nbsp;:&nbsp;|
 			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStopHo8Wed">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStopMi8Wed">
+				<script>createMinutesForSelect();</script>
 			</select>
 			
 			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
-			
+			<button type="button" onclick="btnSetTimer8We()">SET</button> 
+			<span id="printTimer6Value">Is not setted!</span>
 			
 		</div>
+		<div class="oldTimerColor">Wednesday: Old Time:
+			<span id="printTImer56ValueFromController">00:00</span>
+		</div>
+		
 		<!-- one row for start and stop relay - it END HERE -->
 		<!-- DAYS OF WEEK START -->
 
 
-
 		<!-- DAYS OF WEEK START -->
-		<div class="noteColors"><b>Wednesday</b></div>
+		<div class="daysTimerColors"><b>Thursday</b></div>
 		<div class="outputsContainer">
 		Output 7 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStartHo7Thu">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStartMi7Thu">
+				<script>createMinutesForSelect();</script>
 			</select>
 			:&nbsp;:&nbsp;|
 			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStopHo7Thu">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStopMi7Thu">
+				<script>createMinutesForSelect();</script>
 			</select>
 			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
-			
+			<button type="button" onclick="btnSetTimer7Th()">SET</button> 
+			<span id="printTimer7Value">Is not setted!</span>
 		</div>
+
+		
 		<!-- one row for start and stop relay - it END HERE -->
 
 		<!-- one row for start and stop relay - it START HERE -->
 
 		<div class="outputsContainer">
 		Output 8 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStartHo8Thu">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStartMi8Thu">
+				<script>createMinutesForSelect();</script>
 			</select>
 			:&nbsp;:&nbsp;|
 			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStopHo8Thu">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStopMi8Thu">
+				<script>createMinutesForSelect();</script>
 			</select>
 			
 			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
-			
-			
+			<button type="button" onclick="btnSetTimer8Th()">SET</button> 
+			<span id="printTimer8Value">Is not setted!</span>			
+		</div>
+		
+		<div class="oldTimerColor">Thursday: Old Time:
+			<span id="printTImer78ValueFromController">00:00</span>
 		</div>
 		<!-- one row for start and stop relay - it END HERE -->
 		<!-- DAYS OF WEEK START -->
 
-
 		<!-- DAYS OF WEEK START -->
-		<div class="noteColors"><b>Thursday</b></div>
+		<div class="daysTimerColors"><b>Friday: New Time:</b></div>
 		<div class="outputsContainer">
 		Output 7 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			
+			<select id="selectStartHo7Fri">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			
+			<select id="selectStartMi7Fri">			
+				<script>createMinutesForSelect();</script>
 			</select>
 			:&nbsp;:&nbsp;|
 			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStopHo7Fri">			
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStopMi7Fri">			
+				<script>createMinutesForSelect();</script>
 			</select>
 			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
-			
+			<button type="button" onclick="btnSetTimer7Fr()">SET</button> 
+			<span id="printTimer9Value">Is not setted!</span>
+
 		</div>
+		
 		<!-- one row for start and stop relay - it END HERE -->
 
 		<!-- one row for start and stop relay - it START HERE -->
 
 		<div class="outputsContainer">
 		Output 8 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStartHo8Fri">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStartMi8Fri">
+				<script>createMinutesForSelect();</script>
 			</select>
 			:&nbsp;:&nbsp;|
 			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStopHo8Fri">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStopMi8Fri">
+				<script>createMinutesForSelect();</script>
 			</select>
 			
 			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
-			
+			<button type="button" onclick="btnSetTimer8Fr()">SET</button> 
+			<span id="printTimer10Value">Is not setted!</span>
 			
 		</div>
+		
+		<div class="oldTimerColor">Friday: Old Time:
+			<span id="printTImer910ValueFromController">00:00</span>
+		</div>
+		
 		<!-- one row for start and stop relay - it END HERE -->
 		<!-- DAYS OF WEEK START -->
 
-
-
 		<!-- DAYS OF WEEK START -->
-		<div class="noteColors"><b>Friday</b></div>
+		<div class="daysTimerColors"><b>Saturday</b></div>
 		<div class="outputsContainer">
 		Output 7 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStartHo7Sat">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStartMi7Sat">
+				<script>createMinutesForSelect();</script>
 			</select>
 			:&nbsp;:&nbsp;|
 			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStopHo7Sat">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStopMi7Sat">
+				<script>createMinutesForSelect();</script>
 			</select>
 			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
-			
+			<button type="button" onclick="btnSetTimer7Sa()">SET</button> 
+			<span id="printTimer11Value">Is not setted!</span>
 		</div>
+			
 		<!-- one row for start and stop relay - it END HERE -->
 
 		<!-- one row for start and stop relay - it START HERE -->
-
 		<div class="outputsContainer">
 		Output 8 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStartHo8Sat">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStartMi8Sat">
+				<script>createMinutesForSelect();</script>
 			</select>
 			:&nbsp;:&nbsp;|
 			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStopHo8Sat">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStopMi8Sat">
+				<script>createMinutesForSelect();</script>
 			</select>
 			
 			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
+			<button type="button" onclick="btnSetTimer8Sa()">SET</button> 
+			<span id="printTimer12Value">Is not setted!</span>
 			
-			
+		</div>
+		<div class="oldTimerColor">Saturday: Old Time:
+				<span id="printTImer1112ValueFromController">00:00</span>
 		</div>
 		<!-- one row for start and stop relay - it END HERE -->
 		<!-- DAYS OF WEEK START -->
 
-
 		<!-- DAYS OF WEEK START -->
-		<div class="noteColors"><b>Saturday</b></div>
+		<div class="daysTimerColors"><b>Sunday</b></div>
 		<div class="outputsContainer">
 		Output 7 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStartHo7Sun">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStartMi7Sun">
+				<script>createMinutesForSelect();</script>
 			</select>
 			:&nbsp;:&nbsp;|
 			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStopHo7Sun">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStopMi7Sun">
+				<script>createMinutesForSelect();</script>
 			</select>
 			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
-			
+			<button type="button" onclick="btnSetTimer7Su()">SET</button> 
+			<span id="printTimer13Value">Is not setted!</span>
 		</div>
+		
 		<!-- one row for start and stop relay - it END HERE -->
 
 		<!-- one row for start and stop relay - it START HERE -->
-
 		<div class="outputsContainer">
 		Output 8 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStartHo8Sun">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStartMi8Sun">
+				<script>createMinutesForSelect();</script>
 			</select>
 			:&nbsp;:&nbsp;|
 			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
+			<select id="selectStopHo8Sun">
+				<script> createHoursForSelect();</script>
 			</select>
 			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
+			<select id="selectStopMi8Sun">
+				<script>createMinutesForSelect();</script>
 			</select>
 			
 			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
+			<button type="button" onclick="btnSetTimer8Su()">SET</button> 
+			<span id="printTimer14Value">Is not setted!</span>
 			
-			
+		</div>
+		<div class="oldTimerColor">Sunday: Old Time:
+			<span id="printTImer1314ValueFromController">00:00</span>
 		</div>
 		<!-- one row for start and stop relay - it END HERE -->
 		<!-- DAYS OF WEEK START -->
-
-
-
-
-
-		<!-- DAYS OF WEEK START -->
-		<div class="noteColors"><b>Sunday</b></div>
-		<div class="outputsContainer">
-		Output 7 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
-			</select>
-			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
-			</select>
-			:&nbsp;:&nbsp;|
-			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
-			</select>
-			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
-			</select>
-			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
-			
-		</div>
-		<!-- one row for start and stop relay - it END HERE -->
-
-		<!-- one row for start and stop relay - it START HERE -->
-
-		<div class="outputsContainer">
-		Output 8 START: H:&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
-			</select>
-			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
-			</select>
-			:&nbsp;:&nbsp;|
-			STOP: H :&nbsp;
-			<select>
-			  <option value="st1h00">00</option>
-			  <option value="st1h01">01</option>
-			  <option value="st1h02">02</option>
-			  <option value="st1h03">03</option>
-			  <option value="st1h04">04</option>
-			  <option value="st1h05">05</option>
-			  <option value="st1h06">06</option>
-			  <option value="st1h07">07</option>
-			  <option value="st1h08">08</option>
-			  <option value="st1h09">09</option>
-			  <option value="st1h10">10</option>
-			  <option value="st1h11">11</option>
-			  <option value="st1h12">12</option>
-			  <option value="st1h13">13</option>
-			  <option value="st1h14">14</option>
-			  <option value="st1h15">15</option>
-			  <option value="st1h16">16</option>
-			  <option value="st1h17">17</option>
-			  <option value="st1h18">18</option>
-			  <option value="st1h19">19</option>
-			  <option value="st1h20">20</option>
-			  <option value="st1h21">21</option>
-			  <option value="st1h22">22</option>
-			  <option value="st1h23">23</option>
-			</select>
-			Min:&nbsp;
-			<select>
-			  <option value="st1m00">:00</option>
-			  <option value="st1m05">:05</option>
-			  <option value="st1m10">:10</option>
-			  <option value="st1m15">:15</option>
-			  <option value="st1m20">:20</option>
-			  <option value="st1m25">:25</option>
-			  <option value="st1m30">:30</option>
-			  <option value="st1m35">:35</option>
-			  <option value="st1m40">:40</option>
-			  <option value="st1m45">:45</option>
-			  <option value="st1m50">:50</option>
-			  <option value="st1m55">:55</option>
-			</select>
-			
-			&nbsp;|&nbsp;
-			<button type="button">SET</button> 
-			
-			
-		</div>
-		<!-- one row for start and stop relay - it END HERE -->
-		<!-- DAYS OF WEEK START -->
+		<div class="daysTimerColors"><center><button type="button"><b>Send time schedule to Controller</b></center></button></div>
+		
 	</div>
-
 
 <script>
 
+
+// global variables
+
+var gAllInputs = 0;
+var gEnableTimer = true;
+var gAllOutputs = 0;
+var gAllTimersOut7 =[	["00:00", "00:00"],
+						["00:00", "00:00"],
+						["00:00", "00:00"],
+						["00:00", "00:00"],
+						["00:00", "00:00"],
+						["00:00", "00:00"],
+						["00:00", "00:00"],];	// time as string. First is star time
+												// second is end time 
+var gAllTimersOut8 =[	["00:00", "00:00"],
+						["00:00", "00:00"],
+						["00:00", "00:00"],
+						["00:00", "00:00"],
+						["00:00", "00:00"],
+						["00:00", "00:00"],
+						["00:00", "00:00"],];	// time as string. First is star time
+												// second is end time 												
+function setResBit(bitPosition, enable){
+	if (enable == true) {
+		gAllOutputs = gAllOutputs | (1 << (bitPosition - 1));
+	}
+	else { 
+		gAllOutputs = gAllOutputs & ~(1 << (bitPosition - 1));
+	}
+	debuggin();
+	
+}
+function resetTimedOutputsValue(){
+	setResBit(7, false);
+	setResBit(8, false);
+}
+
+function loadJSON(callback) {   
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'jinputs-status.txt', true); 
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {            
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);  
+ }
+ 
+ function initDisplay(){
+     setInterval(main, 1000);
+ }
+initDisplay();
+ 
+ function reloadPage(){
+	location.replace(this.href);
+	window.location.reload();
+}
+
+var in1RealState;
+var in2RealState;
+var in3RealState;
+var in4RealState;
+var in5RealState;
+var in6RealState;
+var in7RealState;
+var in8RealState;
+
+var out1RealState;
+var out2RealState;
+var out3RealState;
+var out4RealState;
+var out5RealState;
+var out6RealState;
+var out7RealState;
+var out8RealState;
+
+var allInputsRealState;
+var allOutputsRealState;
+
+var serverWD = 0;
+var localJsWDstart;
+var localJsWDstop;
+var refreshCounter = 0;
+var serverOffline = false;
+
+function main() {
+ loadJSON(function(response) {
+    var currentJson = JSON.parse(response);
+    allInputsRealState = currentJson[0];
+    allOutputsRealState = currentJson[1];
+
+    if ((parseInt(allInputsRealState) & 1) === 1) {
+		document.getElementById("in01Label").className = "inOutOn"; 
+    }
+    else {
+		document.getElementById("in01Label").className = "inOutOff";  
+    }
+	
+    if ((parseInt(allInputsRealState) & 2) === 1) {
+		document.getElementById("in02Label").className = "inOutOn"; 
+    }
+    else {
+		document.getElementById("in02Label").className = "inOutOff";  
+    }
+	
+    if ((parseInt(allInputsRealState) & 4) === 1) {
+		document.getElementById("in03Label").className = "inOutOn"; 
+    }
+    else {
+    	document.getElementById("in03Label").className = "inOutOff"; 
+    }
+	
+    if ((parseInt(allInputsRealState) & 8) === 1) {
+		document.getElementById("in04Label").className = "inOutOn"; 
+    }
+    else {
+		document.getElementById("in04Label").className = "inOutOff"; 
+    }
+    
+    if ((parseInt(allInputsRealState) & 16) === 1) {
+    	document.getElementById("in05Label").className = "inOutOn"; 
+    }
+    else {
+    	document.getElementById("in05Label").className = "inOutOff"; 
+    }    
+    
+    if ((parseInt(allInputsRealState) & 32) === 1) {
+		document.getElementById("in06Label").className = "inOutOn"; 
+    }
+    else {
+		document.getElementById("in06Label").className = "inOutOff";
+    }
+    
+    if ((parseInt(allInputsRealState) & 64) === 1) {
+		document.getElementById("in07Label").className = "inOutOn"; 
+    }
+    else {
+		document.getElementById("in07Label").className = "inOutOff";
+    }
+    
+	if ((parseInt(allInputsRealState) & 128) === 1) {
+    	document.getElementById("in08Label").className = "inOutOn";
+    }
+    else {
+		document.getElementById("in08Label").className = "inOutOff";
+    }    
+    // outputs
+	if ((parseInt(allOutputsRealState) & 1) === 1) {
+		document.getElementById("out01Label").className = "inOutOn";
+    }
+    else {
+		document.getElementById("out01Label").className = "inOutOff";
+    }       
+    
+  	if ((parseInt(allOutputsRealState) & 2) === 1) {
+     	document.getElementById("out02Label").className = "inOutOn";
+    }
+    else {
+		document.getElementById("out02Label").className = "inOutOff";
+    }   
+    
+	if ((parseInt(allOutputsRealState) & 4) === 1) {
+		document.getElementById("out03Label").className = "inOutOn";
+    }
+    else {
+    	document.getElementById("out03Label").className = "inOutOff";
+    }       
+    
+	if ((parseInt(allOutputsRealState) & 8) === 1) {
+    	document.getElementById("out04Label").className = "inOutOn";
+    }
+    else {
+    	document.getElementById("out04Label").className = "inOutOff";
+    }           
+    
+    if ((parseInt(allOutputsRealState) & 16) === 1) {
+    	document.getElementById("out05Label").className = "inOutOn";
+    }
+    else {
+    	document.getElementById("out05Label").className = "inOutOff";
+    }           
+    
+    if ((parseInt(allOutputsRealState) & 32) === 1) {
+    	document.getElementById("out06Label").className = "inOutOn";
+    }
+    else {
+    	document.getElementById("out06Label").className = "inOutOff";
+    }   
+    
+    if ((parseInt(allOutputsRealState) & 64) === 1) {
+    	document.getElementById("out07Label").className = "inOutOn";
+    }
+    else {
+    	document.getElementById("out07Label").className = "inOutOff";
+    }   
+    
+    if ((parseInt(allOutputsRealState) & 128) === 1) {
+		document.getElementById("out08Label").className = "inOutOn";
+    }
+    else {
+		document.getElementById("out08Label").className = "inOutOff";
+    }   
+ });
+}
+
+
+function debuggin(){
+	document.getElementById("debuggingDiv").innerHTML = gAllTimersOut7 + "<br>" + gAllTimersOut8 + 
+	"<br>" + " outputs mask = " + gAllOutputs + " inout value " + in1RealState;
+}
+
+
+
+
+
+
+
+
+
+
+	function btnSetTimer(outputNr, day, printTimer)	{//printTimer1Value
+		//document.getElementById("printTimer1Value").className = "setInvisible";	
+		var selectedDay;
+		switch(day) {
+			case 0:
+				selectedDay = "Mon";
+				break;
+			case 1:
+				selectedDay = "Tue";
+				break;
+			case 2:
+				selectedDay = "Wed";
+				break;
+			case 3:
+				selectedDay = "Thu";
+				break;
+			case 4:
+				selectedDay = "Fri";
+				break;
+			case 5:
+				selectedDay = "Sat";
+				break;
+			case 6:
+				selectedDay = "Sun";
+				break;
+		}
+		var tmrStartHo = document.getElementById("selectStartHo" + outputNr + selectedDay).value;
+		var tmrStartMi = document.getElementById("selectStartMi" + outputNr + selectedDay).value;
+		var tmrStopHo = document.getElementById("selectStopHo" + outputNr + selectedDay).value;
+		var tmrStopMi = document.getElementById("selectStopMi" + outputNr + selectedDay).value;
+		var timerLine = new Array();
+		if ((tmrStopHo + tmrStopMi) > (tmrStartHo + tmrStartMi)) {
+			resultRelMo = document.getElementById("printTimer" + printTimer + "Value").innerHTML = "" +
+							tmrStartHo + ":" + tmrStartMi + 
+							"->" + tmrStopHo + ":" + tmrStopMi;
+			timerLine[0] = tmrStartHo + ":" + tmrStartMi;
+			timerLine[1] = tmrStopHo  + ":" + tmrStopMi;
+			return timerLine;
+		}
+		else {
+			document.getElementById("printTimer" + printTimer + "Value").innerHTML = "Error!!!";
+			timerLine[0] = "25:00";
+			timerLine[1] = "25:00";
+			 return timerLine;
+		}
+	}
+	//==== RELAY 7
+	function btnSetTimer7Mo() {
+		gAllTimersOut7[0][0] = btnSetTimer(7, 0, 1)[0];
+		gAllTimersOut7[0][1] = btnSetTimer(7, 0, 1)[1];
+	}
+	function btnSetTimer7Tu() {
+		gAllTimersOut7[1][0] = btnSetTimer(7, 1, 3)[0];
+		gAllTimersOut7[1][1] = btnSetTimer(7, 1, 3)[1];
+	}
+	function btnSetTimer7We() {
+		gAllTimersOut7[2][0] = btnSetTimer(7, 2, 5)[0];
+		gAllTimersOut7[2][1] = btnSetTimer(7, 2, 5)[1];
+	}
+	function btnSetTimer7Th() {
+		gAllTimersOut7[3][0] = btnSetTimer(7, 3, 7)[0];
+		gAllTimersOut7[3][1] = btnSetTimer(7, 3, 7)[1];
+	}
+	function btnSetTimer7Fr() {
+		gAllTimersOut7[4][0] = btnSetTimer(7, 4, 9)[0];
+		gAllTimersOut7[4][1] = btnSetTimer(7, 4, 9)[1];
+	}
+	function btnSetTimer7Sa() {
+		gAllTimersOut7[5][0] = btnSetTimer(7, 5, 11)[0];
+		gAllTimersOut7[5][1] = btnSetTimer(7, 5, 11)[1];
+	}
+	function btnSetTimer7Su() {
+		gAllTimersOut7[6][0] = btnSetTimer(7, 6, 13)[0];
+		gAllTimersOut7[6][1] = btnSetTimer(7, 6, 13)[1];
+	}
+
+	//==== RELAY 8
+	function btnSetTimer8Mo() {
+		gAllTimersOut8[0][0] = btnSetTimer(8, 0, 2)[0];
+		gAllTimersOut8[0][1] = btnSetTimer(8, 0, 2)[1];
+	}
+	function btnSetTimer8Tu() {
+		gAllTimersOut8[1][0] = btnSetTimer(8, 1, 4)[0];
+		gAllTimersOut8[1][1] = btnSetTimer(8, 1, 4)[1];
+	}
+	function btnSetTimer8We() {
+		gAllTimersOut8[2][0] = btnSetTimer(8, 2, 6)[0];
+		gAllTimersOut8[2][1] = btnSetTimer(8, 2, 6)[1];
+	}		
+	function btnSetTimer8Th() {
+		gAllTimersOut8[3][0] = btnSetTimer(8, 3, 8)[0];
+		gAllTimersOut8[3][1] = btnSetTimer(8, 3, 8)[1];
+	}		
+	function btnSetTimer8Fr() {
+		gAllTimersOut8[4][0] = btnSetTimer(8, 4, 10)[0];
+		gAllTimersOut8[4][1] = btnSetTimer(8, 4, 10)[1];
+	}
+	function btnSetTimer8Sa() {
+		gAllTimersOut8[5][0] = btnSetTimer(8, 5, 12)[0];
+		gAllTimersOut8[5][1] = btnSetTimer(8, 5, 12)[1];
+	}	
+	function btnSetTimer8Su() {
+		gAllTimersOut8[6][0] = btnSetTimer(8, 6, 14)[0];
+		gAllTimersOut8[6][1] = btnSetTimer(8, 6, 14)[1];
+	}
+
 	function disableTimers() {
+		gEnableTimer = false;
 		document.getElementById("allDaysContainer").className = "setInvisible";	
+		
+		document.getElementById('btn7on').removeAttribute("disabled");
+		document.getElementById('btn7off').removeAttribute("disabled");
+		document.getElementById('btn8on').removeAttribute("disabled");
+		document.getElementById('btn8off').removeAttribute("disabled");
 	}
 	function enableTimers() {
+		gEnableTimer = true;
 		document.getElementById("allDaysContainer").className = "setVisible";	
+		
+		document.getElementById('btn7on').setAttribute("disabled","disabled");
+		document.getElementById('btn7off').setAttribute("disabled","disabled");
+		document.getElementById('btn8on').setAttribute("disabled","disabled");
+		document.getElementById('btn8off').setAttribute("disabled","disabled");
+		
+		resetTimedOutputsValue();
+
 	}
-
-
+	disableTimers();
+	
 
 </script>
 
-
-
 <br/><br/><br/>
 
-<div class="noteColors"> Note for colors: 
-	<span class="inputsOff">&nbsp; &nbsp; </span>&nbsp; = inputs are OFF state &nbsp; | &nbsp; 
-	<span class="inputsOn">&nbsp; &nbsp; </span>&nbsp; = inputs are ON state
-	<span class="inputsNA">&nbsp; &nbsp; </span>&nbsp; = inputs are NOT readed
-
-
-<div>
-
+<div class="daysTimerColors"> States: 
+	<span class="inOutOff">&nbsp; &nbsp; </span>&nbsp; = inputs are in OFF state &nbsp; | &nbsp; 
+	<span class="inOutOn">&nbsp; &nbsp; </span>&nbsp; = inputs are in ON state
+	<span class="inOutNa">&nbsp; &nbsp; </span>&nbsp; = inputs are Undefined
 
 </html> 
+
+<!-- 
+To do!
+1. Function for setting the outputs value from the file
+2. Fontion for display the old timer value
+3. Function for sending the values to php script(Send time schedule to controller) Button
+ -->
+
+
+
+
+
+
+<!-- 
+
+
+		updateSelectButtons(7);
+		updateSelectButtons(8);
+updateSelectButtons(relay){
+		if (relay === 7) {
+			btnSetTimer7Mo();
+			btnSetTimer7Tu();
+			btnSetTimer7We();
+			btnSetTimer7Fr();
+			btnSetTimer7Sa();
+			btnSetTimer7Su();
+		}
+		if (relay === 8)
+			btnSetTimer8Mo();
+			btnSetTimer8Tu();
+			btnSetTimer8We();
+			btnSetTimer8Fr();
+			btnSetTimer8Sa();
+			btnSetTimer8Su();
+	} 
+
+ -->
+<!-- 
+
+if(userIsYoungerThan21) {
+  serveGrapeJuice();
+}
+else {
+  serveWine();
+}
+
+This can be shortened with the ?: like so:
+
+userIsYoungerThan21 ? serveGrapeJuice() : serveWine();
+
+In Javascript conditional operator can evaluate to an expression, not just a statement:
+
+var userType = userIsYoungerThan18 ? "Minor" : "Adult";
+serveDrink(userIsYoungerThan21 ? "Grape Juice" : "Wine"); -->
+
+<!--  To get a bit mask:
+
+var mask = 1 << 5; // gets the 6th bit
+
+To test if a bit is set:
+
+if ((n & mask) != 0) {
+  // bit is set
+} else {
+  // bit is not set
+}
+
+To set a bit:
+
+n |= mask;
+
+To clear a bit:
+
+n &= ~mask;
+
+To toggle a bit:
+
+n ^= mask; -->
+
+<!-- 
+int x;
+int& foo = x;
+
+// foo is now a reference to x so this sets x to 56
+foo = 56;
+std::cout << x <<std::endl;
+
+
+int  var = 20;   /* actual variable declaration */
+int  *ip;        /* pointer variable declaration */
+
+ip = &var;  /* store address of var in pointer variable*/
+
+printf("Address of var variable: %x\n", &var  );
+
+/* address stored in pointer variable */
+printf("Address stored in ip variable: %x\n", ip );
+
+/* access the value using the pointer */
+printf("Value of *ip variable: %d\n", *ip );
+
+
+
+
+ -->
+ 
+ 
+ <!--     #C63D0F
+    #3B3738
+    #FDF3E7
+    #7E8F7C
+ -->
+ 
+<!-- 
+
+change a button color javascript
+
+<input type="button" value="click me" onclick="this.style.color='#000000';
+this.style.backgroundColor = '#ffffff'" />
+
+And here is an example using JavaScript:
+
+document.getElementById("button").bgcolor="#Insert Color Here";
+
+document.getElementById("button").className = 'button_color';
+
+use jquery :  $("#id").css("background","red");
+
+
+ --> 
+ 
+ <!-- border-style: none; -->
+ 
+ 
+<!-- 
+Set or reset a bit
+
+#include <stdio.h>
+
+int main()
+{
+    
+    int f = 0;
+    f |= 1; // set a bit with OR
+    printf("l = %d\n", f);
+    printf("==============\n");
+    
+    
+    f = 1;
+    f &= 0; // clear a bit with OR
+    printf("l = %d\n", f);
+    
+    return 0;
+} -->
